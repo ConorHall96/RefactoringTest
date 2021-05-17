@@ -1,15 +1,4 @@
 # Starter pipeline
-- task: SonarCloudPrepare@1
-  inputs:
-    SonarCloud: 'SonarCloud1'
-    organization: 'conorhall'
-    scannerMode: 'Other'
-    extraProperties: |
-      # Additional properties that will be passed to the scanner,
-      # Put one key=value per line, example:
-      # sonar.exclusions=**/*.bin
-      sonar.projectKey=ConorHall_DevOps-GitHub-SonarCloud
-      sonar.projectName=DevOps-GitHub-SonarCloud
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -28,3 +17,15 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'SonarCloud1'
+    organization: 'conorhall'
+    scannerMode: 'Other'
+    extraProperties: |
+      # Additional properties that will be passed to the scanner,
+      # Put one key=value per line, example:
+      # sonar.exclusions=**/*.bin
+      sonar.projectKey=ConorHall_DevOps-GitHub-SonarCloud
+      sonar.projectName=DevOps-GitHub-SonarCloud
